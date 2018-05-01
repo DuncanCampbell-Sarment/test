@@ -6,3 +6,11 @@ jobs:
     steps:
       - checkout
       - run: echo "Hollow world!"
+
+      - run:
+        name: Install Newman
+        command: 'sudo npm install -g newman'
+
+      - run:
+        name: API testing
+        command: 'newman run https://www.getpostman.com/collections/c375c028eb7a29d6fe0e'
