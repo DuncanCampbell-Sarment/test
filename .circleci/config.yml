@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/nod:8.11
+    steps:
+      - checkout
+      - run: echo "Hollow world!"
