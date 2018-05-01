@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "ae6ba252-8246-43f6-8fd2-b6473d065869",
+		"name": "CEM Security Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET _Role",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/_Role?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"_Role"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET _User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/_User?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"_User"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Bag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Bag?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Bag"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Country",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Country?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Country"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Email?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Email"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET InviteToken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/InviteToken?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"InviteToken"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Log",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Log?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Log"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Member",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Member?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Member"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET MemberAddress",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/MemberAddress?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"MemberAddress"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET MemberInbox",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/MemberInbox?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"MemberInbox"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET MessageContent",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/MessageContent?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"MessageContent"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET OperationToken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/OperationToken?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"OperationToken"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PaymentLog",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/PaymentLog?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"PaymentLog"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Product?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Product"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ProductVariant",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/ProductVariant?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"ProductVariant"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PublishData",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/PublishData?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"PublishData"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PublishRule",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/PublishRule?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"PublishRule"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RefundLog",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/RefundLog?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"RefundLog"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET RegistrationToken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/RegistrationToken?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"RegistrationToken"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Settings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Settings?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Settings"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Tier",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "4mnKcphSQEKKgqhGj15bxw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://test-api.sarment.com/parse/classes/Tier?limit=50",
+					"protocol": "https",
+					"host": [
+						"test-api",
+						"sarment",
+						"com"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Tier"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
