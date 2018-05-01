@@ -13,4 +13,5 @@ jobs:
 
       - run:
           name: API testing
-          command: 'newman run https://www.getpostman.com/collections/c375c028eb7a29d6fe0e'
+          command: 'newman run ./postman/Test.postman_collection.json'
+          #command: 'newman run https://www.getpostman.com/collections/c375c028eb7a29d6fe0e'
