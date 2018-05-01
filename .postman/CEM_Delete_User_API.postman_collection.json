@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "05d4575f-86f9-2c59-9e5b-cbd3c75ca152",
+		"name": "CEM Delete User API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth0 Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"access_token\");",
+							"",
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"accessToken\", jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"grant_type\":\"http://auth0.com/oauth/grant-type/password-realm\",\n  \"client_id\": \"{{clientId}}\",\n  \"username\":\"nazma.bandani+reg401@sarment.com\",\n  \"password\": \"password\",\n  \"realm\":\"Username-Password-Authentication\"\n\n}"
+				},
+				"url": {
+					"raw": "{{auth0Url}}/oauth/token",
+					"host": [
+						"{{auth0Url}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				},
+				"description": "This is the OAuth 2.0 grant that server processes utilize in order to access an API. Use this endpoint to directly request an `access_token` by using the Client Credentials (a Client Id and a Client Secret)."
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Rules",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{auth0Url}}/api/v2/rules",
+					"host": [
+						"{{auth0Url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Session Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response Body has : \" + responseBody.has(\"https://cem.sarment.com/parse_session_token\")] = responseBody.has(\"https://cem.sarment.com/parse_session_token\");",
+							"",
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"var sToken = jsonData[\"https://cem.sarment.com/parse_session_token\"];",
+							"",
+							"postman.setEnvironmentVariable(\"sessionToken\", sToken);",
+							"",
+							"",
+							"var parseUserId = jsonData[\"https://cem.sarment.com/parse_user_id\"];",
+							"",
+							"postman.setEnvironmentVariable(\"parseUserId\", parseUserId);",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{auth0Url}}/userinfo",
+					"host": [
+						"{{auth0Url}}"
+					],
+					"path": [
+						"userinfo"
+					]
+				},
+				"description": "Get Session Token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Member Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;",
+							"",
+							"tests[\"Body matches string\"] = responseBody.has(\"objectId\");",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"var resp = JSON.stringify(jsonData.results);",
+							"",
+							"var memberId = jsonData.results[0].objectId;",
+							"",
+							"postman.setEnvironmentVariable(\"memberId\",memberId);",
+							"",
+							"var userId = jsonData.results[0].user.objectId;",
+							"",
+							"postman.setEnvironmentVariable(\"userId\",userId);",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "{{xParseApplicationId}}"
+					},
+					{
+						"key": "X-Parse-Session-Token",
+						"value": "{{sessionToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{rootUrl}}/parse/classes/Member?where[]=%7B%22user%22:%7B%22objectId%22:%22{{parseUserId}}%22,%22__type%22:%22Pointer%22,%22className%22:%22_User%22%7D%7D&include[]=tier&include[]=user&include[]=city&include[]=registrationToken.tier&include[]=supplementaryToken&include[]=primaryMember",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Member"
+					],
+					"query": [
+						{
+							"key": "where[]",
+							"value": "%7B%22user%22:%7B%22objectId%22:%22{{parseUserId}}%22,%22__type%22:%22Pointer%22,%22className%22:%22_User%22%7D%7D"
+						},
+						{
+							"key": "include[]",
+							"value": "tier"
+						},
+						{
+							"key": "include[]",
+							"value": "user"
+						},
+						{
+							"key": "include[]",
+							"value": "city"
+						},
+						{
+							"key": "include[]",
+							"value": "registrationToken.tier"
+						},
+						{
+							"key": "include[]",
+							"value": "supplementaryToken"
+						},
+						{
+							"key": "include[]",
+							"value": "primaryMember"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Auth0 User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{auth0Url}}/api/v2/users/5a8c127e5c679b1781102797",
+					"host": [
+						"{{auth0Url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"users",
+						"5a8c127e5c679b1781102797"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete From Auth0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{auth0Url}}/api/v2/users/auth0|5a8d0aa66937c1737555e81b",
+					"host": [
+						"{{auth0Url}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"users",
+						"auth0|5a8d0aa66937c1737555e81b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Member Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Parse-Session-Token",
+						"value": "{{sessionToken}}"
+					},
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "{{xParseApplicationId}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{rootUrl}}/parse/classes/Member/{{memberId}}",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"Member",
+						"{{memberId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response status code is : \" + responseCode.code] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Parse-Session-Token",
+						"value": "{{sessionToken}}"
+					},
+					{
+						"key": "X-Parse-Application-Id",
+						"value": "{{xParseApplicationId}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{rootUrl}}/parse/classes/User/{{userId}}",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"parse",
+						"classes",
+						"User",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
