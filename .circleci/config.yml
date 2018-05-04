@@ -8,11 +8,8 @@ jobs:
       - run: echo "Hollow world!"
 
       - run:
-          name: Install Newman
-          command: 'sudo npm install -g newman'
-
-      - run:
           name: API testing
+          command: 'sudo npm install -g newman'
           command: 'newman run ./.postman/CEM_Security_Tests.postman_collection.json -e ./.postman/Test.template.postman_environment.json'
           #command: 'newman run ./postman/Test.postman_collection.json'
           #command: 'newman run https://www.getpostman.com/collections/c375c028eb7a29d6fe0e'
