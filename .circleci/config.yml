@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Hollow world!"
+      - run: npm install
       - run: npm test
       - run: 'sudo npm install -g newman'
       - run: 'newman run ./.postman/CEM_Security_Tests.postman_collection.json -e ./.postman/Test.template.postman_environment.json'
