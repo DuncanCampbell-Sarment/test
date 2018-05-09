@@ -10,9 +10,9 @@ describe('generateAthenaKey', () => {
         'day': '31'
       },
       'key',
-      new Date(2020, 1, 29),
+      new Date(2020, 1).setUTCDate(29),
       'id'
-    )).toBe('keyyear=2020/month=2/day=28/id.json.gz');
+    )).toBe('keyyear=2020/month=2/day=29/id.json.gz');
   });
 
   test('updates timestamp', () => {
