@@ -5,7 +5,6 @@ describe('dummy', () => {
   test('dummy is dumb', () => {
     const answer = common.dummy(5)
 
-    // expect(answer).toBe(42)
-    expect(answer).toBe(0)
+    expect(answer).toBe(42)
   });
 });
