@@ -12,13 +12,13 @@ jobs:
       - run: 'newman run ./.postman/CEM_Security_Tests.postman_collection.json -e ./.postman/Test.template.postman_environment.json'
           #command: 'newman run ./postman/Test.postman_collection.json'
           #command: 'newman run https://www.getpostman.com/collections/c375c028eb7a29d6fe0e'
-      - run:
-          name: "JavaScript Test Suite"
-          # yarn here makes sure we are using the local jest binary
-          command: yarn jest -- --ci --testResultsProcessor="jest-junit"
-          environment:
-            JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
-      - store_test_results:
-          path: reports/junit
-      - store_artifacts:
-          path: reports/junit
+      # - run:
+      #     name: "JavaScript Test Suite"
+      #     # yarn here makes sure we are using the local jest binary
+      #     command: yarn jest -- --ci --testResultsProcessor="jest-junit"
+      #     environment:
+      #       JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
+      # - store_test_results:
+      #     path: reports/junit
+      # - store_artifacts:
+      #     path: reports/junit
