@@ -10,5 +10,8 @@
   },
   "jest": {
     "reporters": [ "default", "jest-junit" ]
+  },
+  "jest-junit": {
+    "output": "reports/junit/js-test-results.xml"
   }
 }
